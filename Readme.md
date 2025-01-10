@@ -39,7 +39,7 @@ TestOrbit/
 ├── conftest.py               # Global fixtures
 ├── pytest.ini                # Pytest configuration
 └── requirements.txt          # Python dependencies
-
+```
 ---
 
 ## 🛠️ Getting Started
@@ -50,51 +50,40 @@ Run the following command in your terminal to create the folder structure and es
 ```bash
 mkdir -p TestOrbit/{page_objects,tests,test_data,utils,drivers,reports,logs} && \
 touch TestOrbit/{page_objects/login_page.py,page_objects/dropdown_page.py,tests/test_login.py,tests/test_dropdown.py,test_data/login_data.json,utils/{database.py,api.py,assertions.py,config.py},drivers/chromedriver.exe,reports/.gitkeep,logs/.gitkeep,conftest.py,pytest.ini,requirements.txt,README.md}
-
+```
 ---
 
 ### 2. Add Dependencies
 Add the following dependencies to requirements.txt:
-
+```
 selenium==4.10.0         # For browser automation
 pytest==7.4.0            # Testing framework
 pytest-html==3.2.0       # HTML report generation
 pytest-xdist==3.3.1      # Parallel test execution
 requests==2.31.0         # API testing
 PyMySQL==1.0.3           # Database connectivity (optional)
-
+```
 
 ### 3. Install Dependencies
 Install all dependencies using pip:
 
 ```bash
 pip install -r requirements.txt
-
+```
 ### 4. Run Tests
 Run the test suite using Pytest:
 
 ```bash
 pytest --html=reports/report.html --self-contained-html
-
+```
 
 🌟 Future Enhancements
 Cypress Integration: Add cypress/ folder for end-to-end testing.
 Docker Integration: Containerize the framework for portable test execution.
 Kubernetes Deployment: Use AWS EKS for scalable pipeline execution.
+
 🛡️ License
 This project is licensed under the MIT License.
 
-🤝 Contributing
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements.
-
-yaml
-Copy code
-
 ---
 
-### Updates Made:
-- Corrected the Markdown for **Getting Started** to ensure proper formatting.
-- Added clear instructions for each step.
-- Ensured consistency in code block formatting with appropriate syntax highlighting.
-
-This should now render perfectly on GitHub. Copy and paste this into your `README.md` file! Let me
