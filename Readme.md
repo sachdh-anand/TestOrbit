@@ -19,26 +19,28 @@ TestOrbit is a scalable and professional-grade automation framework designed for
 ## 📂 Folder Structure
 ```plaintext
 TestOrbit/
-├── page_objects/             # Page Object Model classes
-│   ├── login_page.py         # Page Object for login functionality
-│   ├── dropdown_page.py      # Page Object for dropdown functionality
-├── tests/                    # Test cases
-│   ├── test_login.py         # Test login scenarios
-│   ├── test_dropdown.py      # Test dropdown interactions
-├── test_data/                # Test data for data-driven testing
-│   ├── login_data.json       # Login test data
-├── utils/                    # Reusable utility modules
-│   ├── database.py           # Handles database connections (optional)
-│   ├── api.py                # Handles API authentication and requests
-│   ├── assertions.py         # Contains reusable assertion methods
-│   ├── config.py             # Configuration and environment settings
-├── drivers/                  # Browser drivers
-│   ├── chromedriver.exe
-├── reports/                  # Test execution reports
-├── logs/                     # Execution logs
-├── conftest.py               # Global fixtures
-├── pytest.ini                # Pytest configuration
-└── requirements.txt          # Python dependencies
+├── SeleniumPytest/           # Selenium + Pytest automation framework
+│   ├── page_objects/         # Page Object Model classes
+│   │   ├── login_page.py     # Page Object for login functionality
+│   │   ├── dropdown_page.py  # Page Object for dropdown functionality
+│   ├── tests/                # Test cases
+│   │   ├── test_login.py     # Test login scenarios
+│   │   ├── test_dropdown.py  # Test dropdown interactions
+│   ├── test_data/            # Test data for data-driven testing
+│   │   ├── login_data.json   # Login test data
+│   ├── utils/                # Reusable utility modules
+│   │   ├── database.py       # Handles database connections (optional)
+│   │   ├── api.py            # Handles API authentication and requests
+│   │   ├── assertions.py     # Contains reusable assertion methods
+│   │   ├── config.py         # Configuration and environment settings
+│   ├── drivers/              # Browser drivers
+│   │   ├── chromedriver.exe
+│   ├── reports/              # Test execution reports
+│   ├── logs/                 # Execution logs
+│   ├── conftest.py           # Global fixtures
+│   ├── pytest.ini            # Pytest configuration
+│   └── requirements.txt      # Python dependencies
+└── README.md                 # Master README for the TestOrbit project
 ```
 ---
 
