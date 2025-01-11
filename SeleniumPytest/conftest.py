@@ -1,32 +1,9 @@
-import os
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from dotenv import load_dotenv
-from utils.logger import logger
+from utils.config import Config
 
-# Load environment variables from .env file
-load_dotenv()
 
-@pytest.fixture(scope="session")
-def config():
-    config = {
-        "BASE_URL": "https://the-internet.herokuapp.com",  # Generic base URL
-        "USERNAME": os.getenv("BASIC_AUTH_USERNAME"),  # Load username from .env
-        "PASSWORD": os.getenv("BASIC_AUTH_PASSWORD"),  # Load password from .env
-        "IMPLICIT_WAIT": 10,  # Implicit wait time in seconds
-        "BROWSER": "chrome"  # Default browser
-    }
-    logger.info("Configuration loaded successfully")
-    return config
-
-@pytest.fixture(scope="function")
-def navigate_to_base_url(driver, config):
-    logger.info("Navigating to the base URL")
-    driver.get(config["BASE_URL"])
-    yield
-    logger.info("Finished navigating to the base URL")
-    
 @pytest.fixture(scope="function")
 def driver():
     # Set up Chrome options
@@ -38,14 +15,13 @@ def driver():
 
     # Initialize WebDriver
     driver = webdriver.Chrome(options=chrome_options)
-    driver.implicitly_wait(config.IMPLICIT_WAIT)
+    driver.implicitly_wait(Config.IMPLICIT_WAIT)
 
     # Navigate to the Base URL
-    driver.get(config.BASE_URL)  # Only navigate to base URL    
+    driver.get(Config.BASE_URL)  # Only navigate to base URL    
     yield driver
 
     # Teardown
-    logger.info("Tearing down WebDriver")
     driver.quit()
 
 
@@ -61,8 +37,8 @@ def pytest_configure(config):
         config._metadata = {
             "Project Name": "TestOrbit",
             "Module": "SeleniumPytest",
-            "Base URL": config.BASE_URL,
-            "Browser": config.BROWSER,
+            "Base URL": Config.BASE_URL,
+            "Browser": Config.BROWSER,
             "Tester": "Your Name",
         }
 
