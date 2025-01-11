@@ -1,0 +1,14 @@
+2025-01-10 18:08:49.949 | INFO     | test_login:test_login:18 - Starting test case for login
+2025-01-10 18:08:49.950 | INFO     | test_login:test_login:24 - Navigating to login page
+2025-01-10 18:08:50.452 | INFO     | test_login:test_login:28 - Entering username: tomsmith
+2025-01-10 18:08:50.534 | INFO     | test_login:test_login:30 - Entering password
+2025-01-10 18:08:50.618 | INFO     | test_login:test_login:32 - Clicking login button
+2025-01-10 18:08:50.875 | INFO     | test_login:test_login:37 - Verifying success message
+2025-01-10 18:08:50.895 | SUCCESS  | test_login:test_login:40 - Login test passed for valid credentials
+2025-01-10 18:09:01.120 | INFO     | test_login:test_login:18 - Starting test case for login
+2025-01-10 18:09:01.120 | INFO     | test_login:test_login:24 - Navigating to login page
+2025-01-10 18:09:01.662 | INFO     | test_login:test_login:28 - Entering username: invalid_user
+2025-01-10 18:09:01.751 | INFO     | test_login:test_login:30 - Entering password
+2025-01-10 18:09:01.826 | INFO     | test_login:test_login:32 - Clicking login button
+2025-01-10 18:09:02.123 | INFO     | test_login:test_login:42 - Verifying error message
+2025-01-10 18:09:02.141 | WARNING  | test_login:test_login:45 - Login test passed for invalid credentials
