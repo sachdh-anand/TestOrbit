@@ -4,6 +4,20 @@ TestOrbit is a scalable and professional-grade automation framework designed for
 
 ---
 
+## 🛠️ My Contributions
+
+I have built this custom Selenium Pytest POM framework from scratch, focusing on creating a robust and scalable solution for automated testing. Here are some key highlights of my work:
+
+- **Custom Framework Design**: Developed a modular and maintainable framework using the Page Object Model (POM) pattern, ensuring easy scalability and reusability of code.
+- **Data-Driven Testing**: Implemented parameterized test cases using JSON data files, allowing for flexible and comprehensive test coverage.
+- **Enhanced Logging**: Integrated the Loguru library for detailed and structured logging, making it easier to debug and analyze test results.
+- **Environment Configuration**: Utilized environment variables and configuration files to manage different test environments seamlessly.
+- **CI/CD Integration**: Designed the framework to be CI/CD ready, with configurations for generating HTML reports and running tests in parallel.
+
+This framework demonstrates my ability to design and implement a complete test automation solution, showcasing my skills in Python, Selenium, Pytest, and software testing best practices.
+
+---
+
 ## 🚀 Features
 - **Selenium + Pytest Framework**: Clean, maintainable, and reusable test automation using POM.
 - **Data-Driven Testing**: Parameterized test cases using JSON data files.
@@ -24,8 +38,8 @@ TestOrbit/
 │   │   ├── login_page.py     # Page Object for login functionality
 │   │   ├── dropdown_page.py  # Page Object for dropdown functionality
 │   ├── tests/                # Test cases
-│   │   ├── test_login.py     # Test login scenarios
-│   │   ├── test_dropdown.py  # Test dropdown interactions
+│   │   ├── test_ts001_login.py  # Test login scenarios
+│   │   ├── test_ts002_dropdown.py  # Test dropdown interactions
 │   ├── test_data/            # Test data for data-driven testing
 │   │   ├── login_data.json   # Login test data
 │   ├── utils/                # Reusable utility modules
@@ -33,14 +47,13 @@ TestOrbit/
 │   │   ├── api.py            # Handles API authentication and requests
 │   │   ├── assertions.py     # Contains reusable assertion methods
 │   │   ├── config.py         # Configuration and environment settings
-│   ├── drivers/              # Browser drivers
-│   │   ├── chromedriver.exe
+│   │   ├── logger.py         # Logging configuration
 │   ├── reports/              # Test execution reports
 │   ├── logs/                 # Execution logs
 │   ├── conftest.py           # Global fixtures
 │   ├── pytest.ini            # Pytest configuration
 │   └── requirements.txt      # Python dependencies
-└── README.md                 # Master README for the TestOrbit project
+└── README.md              # Master README for the TestOrbit project
 ```
 ---
 
