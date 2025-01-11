@@ -1,0 +1,8 @@
+selenium==4.11.2         # For browser automation
+pytest==7.4.2            # Testing framework
+pytest-html==4.1.1       # HTML report generation
+pytest-xdist==3.4.0      # Parallel test execution
+requests==2.31.0         # API testing
+PyMySQL==1.1.0           # Database connectivity (optional)
+loguru==0.6.0            # Logging
+python-dotenv==1.0.1     # Environment variables
