@@ -11,6 +11,7 @@ def driver():
     chrome_options.add_argument("--start-maximized")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-popup-blocking")
+    chrome_options.add_argument("--headless")  # Run in headless mode
 
     # Initialize WebDriver
     driver = webdriver.Chrome(options=chrome_options)

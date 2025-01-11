@@ -1,0 +1,22 @@
+2025-01-11 09:33:43.130 | INFO     | test_ts001_login:test_tc001_login:20 - Starting test case 'test_tc001_login' for login
+2025-01-11 09:33:43.131 | INFO     | test_ts001_login:test_tc001_login:26 - Navigating to login page
+2025-01-11 09:33:43.452 | INFO     | test_ts001_login:test_tc001_login:30 - Entering username: tomsmith
+2025-01-11 09:33:43.537 | INFO     | test_ts001_login:test_tc001_login:32 - Entering password
+2025-01-11 09:33:43.624 | INFO     | test_ts001_login:test_tc001_login:34 - Clicking login button
+2025-01-11 09:33:43.888 | INFO     | test_ts001_login:test_tc001_login:39 - Verifying success message
+2025-01-11 09:33:43.907 | SUCCESS  | test_ts001_login:test_tc001_login:42 - Login test passed for valid credentials
+2025-01-11 09:33:54.088 | INFO     | test_ts001_login:test_tc001_login:20 - Starting test case 'test_tc001_login' for login
+2025-01-11 09:33:54.089 | INFO     | test_ts001_login:test_tc001_login:26 - Navigating to login page
+2025-01-11 09:33:54.581 | INFO     | test_ts001_login:test_tc001_login:30 - Entering username: invalid_user
+2025-01-11 09:33:54.686 | INFO     | test_ts001_login:test_tc001_login:32 - Entering password
+2025-01-11 09:33:54.761 | INFO     | test_ts001_login:test_tc001_login:34 - Clicking login button
+2025-01-11 09:33:55.018 | INFO     | test_ts001_login:test_tc001_login:44 - Verifying error message
+2025-01-11 09:33:55.034 | WARNING  | test_ts001_login:test_tc001_login:47 - Login test passed for invalid credentials
+2025-01-11 09:34:05.104 | INFO     | test_ts002_dropdown:test_tc003_dropdown_selection:13 - Starting test case 'test_tc001_dropdown_selection' for dropdown selection
+2025-01-11 09:34:05.105 | INFO     | test_ts002_dropdown:test_tc003_dropdown_selection:19 - Navigating to the dropdown page
+2025-01-11 09:34:05.228 | INFO     | test_ts002_dropdown:test_tc003_dropdown_selection:23 - Selecting option: Option 1
+2025-01-11 09:34:05.310 | SUCCESS  | test_ts002_dropdown:test_tc003_dropdown_selection:29 - Dropdown selection test passed for option: Option 1
+2025-01-11 09:34:15.529 | INFO     | test_ts002_dropdown:test_tc003_dropdown_selection:13 - Starting test case 'test_tc001_dropdown_selection' for dropdown selection
+2025-01-11 09:34:15.529 | INFO     | test_ts002_dropdown:test_tc003_dropdown_selection:19 - Navigating to the dropdown page
+2025-01-11 09:34:15.653 | INFO     | test_ts002_dropdown:test_tc003_dropdown_selection:23 - Selecting option: Option 2
+2025-01-11 09:34:15.732 | SUCCESS  | test_ts002_dropdown:test_tc003_dropdown_selection:29 - Dropdown selection test passed for option: Option 2

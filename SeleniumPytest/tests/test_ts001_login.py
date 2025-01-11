@@ -1,7 +1,9 @@
 import pytest
 import json
 from page_objects.login_page import LoginPage
+from utils.database import Database
 from utils.logger import logger
+from utils.config import Config
 
 # Load test data from JSON
 with open("test_data/login_data.json") as file:
@@ -43,3 +45,35 @@ def test_tc001_login(driver, username, password, expected_message, is_valid):
         actual_message = login_page.get_error_message()
         assert expected_message in actual_message, f"Expected '{expected_message}', but got '{actual_message}'"
         logger.warning("Login test passed for invalid credentials")
+
+@pytest.mark.skip(reason="Skipping this test case for now")
+def test_tc002_login_using_db_dataset(driver):
+    """
+    Test login functionality using credentials fetched from the database
+    """
+    logger.info("Starting test case 'test_tc002_login_db' for login using database")
+
+    # Initialize the LoginPage object
+    login_page = LoginPage(driver)
+
+    # Fetch user credentials from the database
+    db = Database()
+    query = "SELECT username, password FROM users"
+    users_in_db = db.execute_query(query)
+
+    # Navigate to the login page
+    logger.info("Navigating to login page")
+    login_page.navigate_to_login(Config.BASE_URL)
+
+    for username, password in users_in_db:
+        logger.info(f"Testing login with username: {username}")
+        
+        # Perform login
+        login_page.enter_username(username)
+        login_page.enter_password(password)
+        login_page.click_login()
+
+        # Validate login success
+        actual_message = login_page.get_success_message()
+        assert "You logged into a secure area!" in actual_message, f"Login failed for user {username}"
+        logger.success(f"Login test passed for user '{username}'")

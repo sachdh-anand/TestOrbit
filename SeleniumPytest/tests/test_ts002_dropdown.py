@@ -9,7 +9,7 @@ with open("test_data/dropdown_data.json") as file:
     dropdown_data = json.load(file)
 
 @pytest.mark.parametrize("option", dropdown_data["options"])
-def test_tc002_dropdown_selection(driver, option):
+def test_tc003_dropdown_selection(driver, option):
     logger.info("Starting test case 'test_tc001_dropdown_selection' for dropdown selection")
 
     # Initialize the DropdownPage object
