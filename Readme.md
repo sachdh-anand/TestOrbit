@@ -71,12 +71,14 @@ touch TestOrbit/{page_objects/login_page.py,page_objects/dropdown_page.py,tests/
 ### 2. Add Dependencies
 Add the following dependencies to requirements.txt:
 ```
-selenium==4.10.0         # For browser automation
-pytest==7.4.0            # Testing framework
-pytest-html==3.2.0       # HTML report generation
-pytest-xdist==3.3.1      # Parallel test execution
+selenium==4.11.2         # For browser automation
+pytest==7.4.2            # Testing framework
+pytest-html==4.1.1       # HTML report generation
+pytest-xdist==3.4.0      # Parallel test execution
 requests==2.31.0         # API testing
-PyMySQL==1.0.3           # Database connectivity (optional)
+loguru==0.6.0            # Logging
+python-dotenv==1.0.1     # Environment variables
+
 ```
 
 ### 3. Install Dependencies
