@@ -16,9 +16,8 @@ def driver():
     driver = webdriver.Chrome(options=chrome_options)
     driver.implicitly_wait(Config.IMPLICIT_WAIT)
 
-    # Navigate to the URL with basic auth credentials
-    auth_url = f"https://{Config.USERNAME}:{Config.PASSWORD}@the-internet.herokuapp.com/basic_auth"
-    driver.get(auth_url)
+    # Navigate to the Base URL
+    driver.get(Config.BASE_URL)  # Only navigate to base URL    
     yield driver
 
     # Teardown
