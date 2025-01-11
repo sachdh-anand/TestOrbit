@@ -14,8 +14,8 @@ with open("test_data/login_data.json") as file:
         (login_data["invalid_credentials"]["username"], login_data["invalid_credentials"]["password"], login_data["invalid_credentials"]["expected_message"], False),
     ]
 )
-def test_login(driver, username, password, expected_message, is_valid):
-    logger.info("Starting test case for login")
+def test_tc001_login(driver, username, password, expected_message, is_valid):
+    logger.info("Starting test case 'test_tc001_login' for login")
 
     # Initialize the LoginPage object
     login_page = LoginPage(driver)
