@@ -1,106 +1,140 @@
 # TestOrbit Automation Framework
 
-TestOrbit is a scalable and professional-grade automation framework designed for end-to-end testing of modern web applications. Built with modularity and flexibility in mind, the framework currently leverages **Selenium**, **Pytest**, and the **Page Object Model (POM)**. It is future-ready to expand into **Cypress**, **Dockerized deployments**, and **AWS Kubernetes pipelines**.
+TestOrbit is a **powerful boilerplate automation framework** designed to kickstart end-to-end testing of modern web applications. Built with **modularity**, **scalability**, and **flexibility**, this framework integrates **Selenium**, **Pytest**, and **Cypress**, providing a robust foundation for automated testing.
+
+The framework is thoughtfully crafted to showcase **real-world examples** of different automation approaches, allowing teams to evaluate and select the framework that best suits their specific needs. With **ready-to-use examples**, teams can quickly adopt and extend the framework to align with their workflows and objectives. TestOrbit is also **future-ready**, enabling seamless integration into CI/CD pipelines.
+
+Whether you're automating UI testing with Selenium, writing Python-based workflows with Pytest, or leveraging JavaScript with Cypress, **TestOrbit** provides a solid foundation for building and scaling automation efforts.
 
 ---
 
-## 🛠️ My Contributions
+### 🔥 Key Highlights
+- **Flexibility in Framework Selection**: Offers multiple frameworks (Selenium + Pytest, Cypress) so teams can evaluate and choose the best tool for their specific requirements.
+- **Boilerplate Simplicity**: Ready-to-use, professionally structured framework designed for immediate deployment and extension.
+- **Integration-Ready**: Seamlessly integrates into CI/CD pipelines with detailed reporting, reusable utilities, and modular design.
+- **Scalable Architecture**: Built for growth, enabling teams to scale their automation as projects evolve.
+- **Market-Ready Design**: Serves as an excellent portfolio project, showcasing advanced automation capabilities and best practices.
 
-I have built this custom Selenium Pytest POM framework from scratch, focusing on creating a robust and scalable solution for automated testing. Here are some key highlights of my work:
+    ![image](https://github.com/user-attachments/assets/b49a69f5-de6b-4865-9c42-e09ddea4386f)
 
-- **Custom Framework Design**: Developed a modular and maintainable framework using the Page Object Model (POM) pattern, ensuring easy scalability and reusability of code.
-- **Data-Driven Testing**: Implemented parameterized test cases using JSON data files, allowing for flexible and comprehensive test coverage.
-- **Enhanced Logging**: Integrated the Loguru library for detailed and structured logging, making it easier to debug and analyze test results.
-- **Environment Configuration**: Utilized environment variables and configuration files to manage different test environments seamlessly.
-- **CI/CD Integration**: Designed the framework to be CI/CD ready, with configurations for generating HTML reports and running tests in parallel.
-
-This framework demonstrates my ability to design and implement a complete test automation solution, showcasing my skills in Python, Selenium, Pytest, and software testing best practices.
+This framework is a **testament to my ability to build comprehensive automation solutions** that cater to diverse testing needs. **TestOrbit** equips teams with the flexibility to evaluate and adopt the right framework, making it a valuable tool for QA engineers and developers alike.
 
 ---
 
 ## 🚀 Features
-- **Selenium + Pytest Framework**: Clean, maintainable, and reusable test automation using POM.
-- **Data-Driven Testing**: Parameterized test cases using JSON data files.
-- **Custom Assertions**: Centralized assertion methods for consistent validations.
-- **Scalable Folder Structure**: Modular design for easy integration and expansion.
-- **CI/CD Ready**: Designed to integrate seamlessly with Jenkins, GitHub Actions, and Docker.
-- **Future Expansion**:
-  - Cypress integration for advanced testing.
-  - End-to-end deployment pipelines using Docker, EKS, and AWS.
+
+### Selenium Pytest Framework:
+- **Page Object Model (POM)** for modular and reusable test automation.
+- **Data-Driven Testing** with JSON files and database integration.
+- **Custom Assertions** for consistent and centralized validation logic.
+- **CI/CD Integration** for seamless integration with Jenkins and GitHub Actions.
+- **Environment Configuration** with `.env` for flexible test environment management.
+
+### Cypress Framework:
+- **Reusable Commands** for workflow-based implementation of test scenarios.
+- **BDD Feature Files** for test case documentation with Gherkin syntax.
+- **Custom Assertions** for streamlined and reusable validation steps.
+- **Video Recording** of test executions for debugging and transparency.
+- **Future-Ready** for advanced integrations like Docker and AWS pipelines.
 
 ---
 
 ## 📂 Folder Structure
+
 ```plaintext
 TestOrbit/
-├── SeleniumPytest/           # Selenium + Pytest automation framework
-│   ├── page_objects/         # Page Object Model classes
-│   │   ├── login_page.py     # Page Object for login functionality
-│   │   ├── dropdown_page.py  # Page Object for dropdown functionality
-│   ├── tests/                # Test cases
-│   │   ├── test_ts001_login.py  # Test login scenarios
+├── CypressFramework/        # Cypress automation framework
+│   ├── BDD/                 # Cucumber feature files for BDD scenarios
+│   │   ├── TS001_ProductPageView.feature
+│   │   ├── TS002_AddToCartAndCheckout.feature
+│   ├── cypress/             # Cypress core folder
+│   │   ├── downloads/       # Downloaded files during tests
+│   │   ├── e2e/             # Cypress test specs
+│   │   │   ├── TS001_ProductPageView.cy.js
+│   │   │   ├── TS002_AddToCartAndCheckout.cy.js
+│   │   ├── fixtures/        # Test data for Cypress
+│   │   ├── support/         # Support files for Cypress
+│   │       ├── assertions.js      # Centralized assertions for Cypress
+│   │       ├── cartCommands.js    # Cart-related commands
+│   │       ├── productCommands.js # Product-related commands
+│   ├── cypress.config.js    # Cypress configuration file
+│   ├── package.json         # Node.js dependencies
+├── SeleniumPytest/          # Selenium + Pytest automation framework
+│   ├── logs/                # Execution logs
+│   ├── page_objects/        # Page Object Model classes
+│   │   ├── dropdown_page.py # Page Object for dropdown functionality
+│   │   ├── login_page.py    # Page Object for login functionality
+│   ├── reports/             # Test execution reports
+│   ├── test_data/           # Test data for data-driven testing
+│   │   ├── login_data.json  # Login test data
+│   ├── tests/               # Test cases
+│   │   ├── test_ts001_login.py     # Test login scenarios
 │   │   ├── test_ts002_dropdown.py  # Test dropdown interactions
-│   ├── test_data/            # Test data for data-driven testing
-│   │   ├── login_data.json   # Login test data
-│   ├── utils/                # Reusable utility modules
-│   │   ├── database.py       # Handles database connections (optional)
-│   │   ├── api.py            # Handles API authentication and requests
-│   │   ├── assertions.py     # Contains reusable assertion methods
-│   │   ├── config.py         # Configuration and environment settings
-│   │   ├── logger.py         # Logging configuration
-│   ├── reports/              # Test execution reports
-│   ├── logs/                 # Execution logs
-│   ├── conftest.py           # Global fixtures
-│   ├── pytest.ini            # Pytest configuration
-│   └── requirements.txt      # Python dependencies
-└── README.md              # Master README for the TestOrbit project
+│   ├── utils/               # Reusable utility modules
+│       ├── api.py           # Handles API authentication and requests
+│       ├── assertions.py    # Contains reusable assertion methods
+│       ├── config.py        # Configuration and environment settings
+│       ├── database.py      # Handles database connections (optional)
+│       ├── logger.py        # Logging configuration
+│   ├── conftest.py          # Global fixtures
+│   ├── pytest.ini           # Pytest configuration
+│   ├── requirements.txt     # Python dependencies
+└── README.md                # Master README for the TestOrbit project
 ```
+
 ---
 
-## 🛠️ Getting Started
+## 🔧 Getting Started
 
-### 1. Create the Project Structure
-Run the following command in your terminal to create the folder structure and essential files:
+### Selenium Pytest Framework
 
-```bash
-mkdir -p TestOrbit/{page_objects,tests,test_data,utils,drivers,reports,logs} && \
-touch TestOrbit/{page_objects/login_page.py,page_objects/dropdown_page.py,tests/test_login.py,tests/test_dropdown.py,test_data/login_data.json,utils/{database.py,api.py,assertions.py,config.py},drivers/chromedriver.exe,reports/.gitkeep,logs/.gitkeep,conftest.py,pytest.ini,requirements.txt,README.md}
-```
+1. **Install Python Dependencies**:
+   ```bash
+   pip install -r SeleniumPytest/requirements.txt
+   ```
+
+2. **Run Selenium Tests**:
+   ```bash
+   pytest --html=SeleniumPytest/reports/report.html --self-contained-html
+   ```
+
 ---
 
-### 2. Add Dependencies
-Add the following dependencies to requirements.txt:
-```
-selenium==4.11.2         # For browser automation
-pytest==7.4.2            # Testing framework
-pytest-html==4.1.1       # HTML report generation
-pytest-xdist==3.4.0      # Parallel test execution
-requests==2.31.0         # API testing
-loguru==0.6.0            # Logging
-python-dotenv==1.0.1     # Environment variables
+### Cypress Framework
 
-```
+1. **Navigate to the Cypress Framework Folder**:
+   ```bash
+   cd CypressFramework
+   ```
 
-### 3. Install Dependencies
-Install all dependencies using pip:
+2. **Install Node.js Dependencies**:
+   ```bash
+   npm install
+   ```
 
-```bash
-pip install -r requirements.txt
-```
-### 4. Run Tests
-Run the test suite using Pytest:
+3. **Run Cypress Tests**:
+   - Open the Cypress Test Runner:
+     ```bash
+     npx cypress open
+     ```
+   - Run tests in headless mode:
+     ```bash
+     npx cypress run
+     ```
 
-```bash
-pytest --html=reports/report.html --self-contained-html
-```
+4. **BDD Scenarios**:
+   - Review feature files in `CypressFramework/BDD`.
 
-🌟 Future Enhancements
-Cypress Integration: Add cypress/ folder for end-to-end testing.
-Docker Integration: Containerize the framework for portable test execution.
-Kubernetes Deployment: Use AWS EKS for scalable pipeline execution.
+---
 
-🛡️ License
+## 🌟 Future Enhancements
+- **Containerization**: Add Docker support for cross-platform compatibility.
+- **Cloud Execution**: Integrate with AWS EKS for scalable test execution pipelines.
+- **API Testing**: Extend Cypress or Pytest frameworks for robust API validations.
+
+---
+
+## 🛡️ License
 This project is licensed under the MIT License.
 
 ---
-
