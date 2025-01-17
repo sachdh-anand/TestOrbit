@@ -7,5 +7,5 @@ __pycache__/
 venv/
 
 
-
-
+# Ignore node_modules/ - Dependencies not needed in the repository
+node_modules/
