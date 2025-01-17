@@ -27,7 +27,6 @@ This framework is a **testament to my ability to build comprehensive automation 
 - **Page Object Model (POM)** for modular and reusable test automation.
 - **Data-Driven Testing** with JSON files and database integration.
 - **Custom Assertions** for consistent and centralized validation logic.
-- **CI/CD Integration** for seamless integration with Jenkins and GitHub Actions.
 - **Environment Configuration** with `.env` for flexible test environment management.
 
 ### Cypress Framework:
@@ -35,13 +34,36 @@ This framework is a **testament to my ability to build comprehensive automation 
 - **BDD Feature Files** for test case documentation with Gherkin syntax.
 - **Custom Assertions** for streamlined and reusable validation steps.
 - **Video Recording** of test executions for debugging and transparency.
-- **Future-Ready** for advanced integrations like Docker and AWS pipelines.
+
+### CI/CD Integration: Jenkins Pipeline as a Service
+TestOrbit incorporates a robust and centralized **Jenkinsfile** that demonstrates a full-fledged CI/CD pipeline tailored for modern web applications. This pipeline is designed to ensure **high code quality**, **environment consistency**, and **seamless deployments** across Development, QA, and Production environments, leveraging **Docker** and **Kubernetes**.
+
+#### 🚀 Pipeline Overview
+1. **Static Code Analysis (Pre-Merge Check)**  
+   Automatically runs **linting** and **security scans** on pull requests to catch issues early and block bad code from merging into the main branch.
+2. **Dev Pipeline (Continuous Integration)**  
+   Builds Docker images, pushes them to the registry, and triggers Kubernetes to deploy updates to the Dev environment for rapid feedback.
+3. **QA Pipeline (Release Validation)**  
+   Detects stable release tags, builds and pushes release-specific Docker images, and deploys them to QA for validation. Nightly **Cypress regression tests** ensure application stability.
+4. **Controlled Production Deployment**  
+   Validated and tested builds are deployed to Production after **manual approval**, ensuring the highest level of reliability and confidence.
+
+#### 🌟 Key CI/CD Features
+- **Centralized Jenkinsfile**: A single, easily maintainable file that manages the entire pipeline from pre-merge checks to Production deployments.  
+- **Environment Consistency**: Dockerized builds and Kubernetes orchestration ensure reliable, scalable, and consistent deployments across environments.  
+- **Shift-Left Testing**: Early-stage static code analysis prevents issues downstream, saving time and resources.  
+- **Automated Nightly Tests**: Cypress tests run nightly to catch regressions, improving application stability and delivery confidence.  
+- **Real-Time Notifications**: Slack integration keeps the team informed of deployment statuses, ensuring transparency and collaboration.
+
+#### 🎯 Why This Matters
+This CI/CD pipeline reflects **best practices in modern DevOps**, combining automation, scalability, and efficiency to deliver software that is **reliable**, **high-quality**, and **deployment-ready**. The framework's modular design makes it easy to adapt and scale for different projects, showcasing my ability to create practical, impactful automation solutions.
 
 ---
 
 ## 📂 Folder Structure
 
 ```plaintext
+
 TestOrbit/
 ├── CypressFramework/        # Cypress automation framework
 │   ├── BDD/                 # Cucumber feature files for BDD scenarios
@@ -54,11 +76,15 @@ TestOrbit/
 │   │   │   ├── TS002_AddToCartAndCheckout.cy.js
 │   │   ├── fixtures/        # Test data for Cypress
 │   │   ├── support/         # Support files for Cypress
-│   │       ├── assertions.js      # Centralized assertions for Cypress
-│   │       ├── cartCommands.js    # Cart-related commands
-│   │       ├── productCommands.js # Product-related commands
+│   │   │   ├── utils/               # Utility functions
+│   │   │   │   ├── assert.js        # Centralized assertion utilities
+│   │   │   ├── workflowCommands/    # Feature-specific reusable Cypress commands
+│   │   │   │   ├── cartCommands.js       # Cart-related commands
+│   │   │   │   ├── productCommands.js    # Product-related commands
+│   │   │   ├── commands.js          # Global custom Cypress commands
 │   ├── cypress.config.js    # Cypress configuration file
 │   ├── package.json         # Node.js dependencies
+│   ├── package-lock.json    # Node.js lockfile
 ├── SeleniumPytest/          # Selenium + Pytest automation framework
 │   ├── logs/                # Execution logs
 │   ├── page_objects/        # Page Object Model classes
@@ -79,7 +105,11 @@ TestOrbit/
 │   ├── conftest.py          # Global fixtures
 │   ├── pytest.ini           # Pytest configuration
 │   ├── requirements.txt     # Python dependencies
+├── node_modules/            # Node.js dependencies (excluded from version control)
+├── Jenkinsfile              # CI/CD pipeline definition for Jenkins
+├── LICENSE                  # License for the TestOrbit project
 └── README.md                # Master README for the TestOrbit project
+
 ```
 
 ---
