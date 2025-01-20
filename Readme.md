@@ -74,13 +74,23 @@ TestOrbit/
 │   │   ├── e2e/             # Cypress test specs
 │   │   │   ├── TS001_ProductPageView.cy.js
 │   │   │   ├── TS002_AddToCartAndCheckout.cy.js
-│   │   ├── fixtures/        # Test data for Cypress
+│   │   ├── fixtures/        # Test data and file uploads/downloads for Cypress
+│   │   │   ├── testData/          # Test data files
+│   │   │   │   ├── productData.json   # Product-related test data
+│   │   │   │   ├── userCredentials.json # User login credentials
+│   │   │   │   ├── checkoutData.json   # Checkout-related test data
+│   │   │   ├── upload_download/   # Files for upload and download tests
+│   │   │   │   ├── sampleImage.jpg     # Sample image for upload tests
+│   │   │   │   ├── sampleFile.pdf       # Sample PDF for upload tests
+│   │   │   ├── example.json        # Cypress default example fixture
 │   │   ├── support/         # Support files for Cypress
 │   │   │   ├── utils/               # Utility functions
-│   │   │   │   ├── assert.js        # Centralized assertion utilities
+│   │   │   │   ├── assert.js         # Centralized assertion utilities
+│   │   │   │   ├── database.js       # Database-related utility functions
+│   │   │   │   ├── api.js            # API-related utility functions
 │   │   │   ├── workflowCommands/    # Feature-specific reusable Cypress commands
-│   │   │   │   ├── cartCommands.js       # Cart-related commands
-│   │   │   │   ├── productCommands.js    # Product-related commands
+│   │   │   │   ├── cartCommands.js        # Cart-related commands
+│   │   │   │   ├── productCommands.js     # Product-related commands
 │   │   │   ├── commands.js          # Global custom Cypress commands
 │   ├── cypress.config.js    # Cypress configuration file
 │   ├── package.json         # Node.js dependencies
