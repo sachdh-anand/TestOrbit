@@ -92,9 +92,14 @@ TestOrbit/
 │   │   │   │   ├── cartCommands.js        # Cart-related commands
 │   │   │   │   ├── productCommands.js     # Product-related commands
 │   │   │   ├── commands.js          # Global custom Cypress commands
+│   │   │   ├── e2e.js               # Cypress global configuration, loaded before test files
+│   │   ├── .env                     # Environment variables for secrets (excluded from version control)
 │   ├── cypress.config.js    # Cypress configuration file
 │   ├── package.json         # Node.js dependencies
 │   ├── package-lock.json    # Node.js lockfile
+│   ├── videos/              # Cypress test run video recordings
+│   │   ├── TS001_ProductPageView.cy.js.mp4
+│   │   ├── TS002_AddToCartAndCheckout.cy.js.mp4
 ├── SeleniumPytest/          # Selenium + Pytest automation framework
 │   ├── logs/                # Execution logs
 │   ├── page_objects/        # Page Object Model classes
@@ -119,6 +124,7 @@ TestOrbit/
 ├── Jenkinsfile              # CI/CD pipeline definition for Jenkins
 ├── LICENSE                  # License for the TestOrbit project
 └── README.md                # Master README for the TestOrbit project
+
 
 ```
 
