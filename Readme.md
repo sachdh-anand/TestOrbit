@@ -76,19 +76,25 @@ TestOrbit/
 │   │   │   ├── TS002_AddToCartAndCheckout.cy.js
 │   │   ├── fixtures/        # Test data and file uploads/downloads for Cypress
 │   │   │   ├── testData/          # Test data files
+│   │   │   │   ├── productData.json   # Product-related test data
+│   │   │   │   ├── userCredentials.json # User login credentials
+│   │   │   │   ├── checkoutData.json   # Checkout-related test data
 │   │   │   ├── upload_download/   # Files for upload and download tests
+│   │   │   │   ├── sampleImage.jpg     # Sample image for upload tests
+│   │   │   │   ├── sampleFile.pdf      # Sample PDF for upload tests
+│   │   │   ├── example.json        # Cypress default example fixture
 │   │   ├── support/         # Support files for Cypress
 │   │   │   ├── utils/               # Utility functions
 │   │   │   │   ├── assert.js         # Centralized assertion utilities
 │   │   │   │   ├── database.js       # Database-related utility functions
 │   │   │   │   ├── api.js            # API-related utility functions
-│   │   │   │   ├── genericElements.js # Common Cypress commands for interacting with shared UI elements
+│   │   │   │   ├── genericElements.js # Common locators for form elements across the app
 │   │   │   ├── workflowCommands/    # Feature-specific reusable Cypress commands
 │   │   │   │   ├── cartCommands.js        # Cart-related commands
 │   │   │   │   ├── productCommands.js     # Product-related commands
 │   │   │   ├── commands.js          # Global custom Cypress commands
 │   │   │   ├── e2e.js               # Cypress global configuration, loaded before test files
-│   │   ├── .env                     # Environment variables for secrets (excluded from version control)
+│   ├── .env                     # Environment variables for secrets (excluded from version control)
 │   ├── cypress.config.js    # Cypress configuration file
 │   ├── package.json         # Node.js dependencies
 │   ├── package-lock.json    # Node.js lockfile
@@ -96,7 +102,28 @@ TestOrbit/
 │   │   ├── TS001_ProductPageView.cy.js.mp4
 │   │   ├── TS002_AddToCartAndCheckout.cy.js.mp4
 ├── SeleniumPytest/          # Selenium + Pytest automation framework
+│   ├── logs/                # Execution logs
+│   ├── page_objects/        # Page Object Model classes
+│   │   ├── dropdown_page.py # Page Object for dropdown functionality
+│   │   ├── login_page.py    # Page Object for login functionality
+│   ├── reports/             # Test execution reports
+│   ├── test_data/           # Test data for data-driven testing
+│   │   ├── login_data.json  # Login test data
+│   ├── tests/               # Test cases
+│   │   ├── test_ts001_login.py     # Test login scenarios
+│   │   ├── test_ts002_dropdown.py  # Test dropdown interactions
+│   ├── utils/               # Reusable utility modules
+│       ├── api.py           # Handles API authentication and requests
+│       ├── assertions.py    # Contains reusable assertion methods
+│       ├── config.py        # Configuration and environment settings
+│       ├── database.py      # Handles database connections (optional)
+│       ├── logger.py        # Logging configuration
+│   ├── conftest.py          # Global fixtures
+│   ├── pytest.ini           # Pytest configuration
+│   ├── requirements.txt     # Python dependencies
+├── node_modules/            # Node.js dependencies (excluded from version control)
 ├── Jenkinsfile              # CI/CD pipeline definition for Jenkins
+├── LICENSE                  # License for the TestOrbit project
 └── README.md                # Master README for the TestOrbit project
 
 
