@@ -88,7 +88,6 @@ TestOrbit/
 │   │   │   │   ├── assert.js         # Centralized assertion utilities
 │   │   │   │   ├── database.js       # Database-related utility functions
 │   │   │   │   ├── api.js            # API-related utility functions
-│   │   │   │   ├── genericElements.js # Common locators for form elements across the app
 │   │   │   ├── workflowCommands/    # Feature-specific reusable Cypress commands
 │   │   │   │   ├── cartCommands.js        # Cart-related commands
 │   │   │   │   ├── productCommands.js     # Product-related commands
