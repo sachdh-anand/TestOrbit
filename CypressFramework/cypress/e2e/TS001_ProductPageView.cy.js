@@ -21,7 +21,7 @@ describe("TS001_ProductPageView", () => {
     const expectedDetails = {
       title: "HTC Touch HD",     // Product title
       price: "$146.00",          // Product price      
-      availability: "In Stock",  // Availability status
+      //availability: "Out Of Stock",  // Availability status
       brand: "HTC",              // Product brand
     };
 

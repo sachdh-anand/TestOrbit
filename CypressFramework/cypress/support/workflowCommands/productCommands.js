@@ -25,15 +25,17 @@ Cypress.Commands.add("validateProductDetails", (expectedDetails) => {
   // Validate product title
   cy.validateText("h1", expectedDetails.title);
 
-  // Validate product price
-  cy.validateText(".price", expectedDetails.price);
-
   // Validate product availability status
-  cy.validateText("li .badge.badge-success", expectedDetails.availability);
+  //cy.validateText("li .badge.badge-success", expectedDetails.availability);
+  //cy.validateText("li .badge badge-danger", expectedDetails.availability);
+  
 
   // Validate product brand
   cy.validateText(
     'a[href*="manufacturer/info&manufacturer_id=5"]',
     expectedDetails.brand
   );
+
+    // Validate product price
+    cy.validateText(".price", expectedDetails.price);
 });

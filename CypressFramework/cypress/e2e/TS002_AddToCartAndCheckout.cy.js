@@ -11,14 +11,14 @@ beforeEach(() => {
   describe("TS002_AddToCartAndCheckout", () => {
     /**
      * Test Case: TC001_Add_Product_To_Cart_And_Proceed_To_Checkout
-     * Add "HTC Touch HD" to the cart and proceed to checkout.
+     * Add "iPod Nano" to the cart and proceed to checkout.
      */
     it("TC001_Add_Product_To_Cart_And_Proceed_To_Checkout", () => {
-      // Search for the product "HTC Touch HD"
-      cy.searchProduct("HTC Touch HD");
+      // Search for the product "iPod Nano"
+      cy.searchProduct("iPod Nano");
   
       // Click on the product in the search results
-      cy.clickProduct("HTC Touch HD");
+      cy.clickProduct("iPod Nano");
   
       // Add the product to the cart
       cy.addToCart();
@@ -27,13 +27,13 @@ beforeEach(() => {
       cy.navigateToCart();
   
       // Validate that the product is in the cart with the correct price
-      cy.validateCartItem("HTC Touch HD", "$146.00");
+      cy.validateCartItem("iPod Nano", "$122.00");
 
       const expectedSummary = {
-        subTotal: "$120.00",
+        subTotal: "$100.00",
         ecoTax: "$2.00",
-        vat: "$24.00",
-        total: "$146.00",
+        vat: "$20.00",
+        total: "$122.00",
       };
     
       cy.validateCartSummary(expectedSummary);
