@@ -30,3 +30,8 @@ Cypress.Commands.add(
 Cypress.Commands.add("validateUrl", (expectedUrl) => {
   cy.url().should("eq", expectedUrl); // Validate that the current URL matches the expected URL
 });
+
+// Custom command to assert equality using expect
+Cypress.Commands.add("equate", (actual, expected) => {
+  expect(actual).to.equal(expected);
+});

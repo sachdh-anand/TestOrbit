@@ -18,3 +18,4 @@ import './commands'
 import "./workflowCommands/productCommands.js";
 import "./workflowCommands/cartCommands.js";
 import "./utils/assert.js";
+import './utils/apiCommands.js';

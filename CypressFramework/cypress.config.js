@@ -1,8 +1,14 @@
 const { defineConfig } = require("cypress");
+require('dotenv').config();
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "https://ecommerce-playground.lambdatest.io", // Base URL for all tests
+    baseUrl: "https://the-internet.herokuapp.com",
+    env: {
+      apiBaseUrl: "https://restful-booker.herokuapp.com",
+      apiUsername: process.env.CYPRESS_API_USERNAME,
+      apiPassword: process.env.CYPRESS_API_PASSWORD,
+    },
     viewportWidth: 1920, // Set the desired viewport width
     viewportHeight: 1080, // Set the desired viewport height
     retries: {
