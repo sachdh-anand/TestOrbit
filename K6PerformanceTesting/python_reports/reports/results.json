@@ -1,0 +1,224 @@
+{
+    "root_group": {
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+            "🐊 Crocodiles API Performance Tests": {
+                "checks": {},
+                "name": "🐊 Crocodiles API Performance Tests",
+                "path": "::🐊 Crocodiles API Performance Tests",
+                "id": "c93b2cedd6194f84b03bfe98887710ed",
+                "groups": {
+                        "✅ Fetch a list of public crocodiles": {
+                            "path": "::🐊 Crocodiles API Performance Tests::✅ Fetch a list of public crocodiles",
+                            "id": "4b09744eb9abff32c68ae478b2485e0c",
+                            "groups": {},
+                            "checks": {
+                                    "expected Response status should be 200 to equal 200": {
+                                        "path": "::🐊 Crocodiles API Performance Tests::✅ Fetch a list of public crocodiles::expected Response status should be 200 to equal 200",
+                                        "id": "51c6805394126d0ff49d997912a34a33",
+                                        "passes": 33050,
+                                        "fails": 330,
+                                        "name": "expected Response status should be 200 to equal 200"
+                                    },
+                                    "has valid json body": {
+                                        "name": "has valid json body",
+                                        "path": "::🐊 Crocodiles API Performance Tests::✅ Fetch a list of public crocodiles::has valid json body",
+                                        "id": "c58f7f2abaa822a16b2f2f51e52cdda3",
+                                        "passes": 33050,
+                                        "fails": 0
+                                    },
+                                    "expected Number of crocodiles should be more than 4 to be above 4": {
+                                        "passes": 33050,
+                                        "fails": 0,
+                                        "name": "expected Number of crocodiles should be more than 4 to be above 4",
+                                        "path": "::🐊 Crocodiles API Performance Tests::✅ Fetch a list of public crocodiles::expected Number of crocodiles should be more than 4 to be above 4",
+                                        "id": "3a59f526534144b0439afb466e39fb0c"
+                                    }
+                                },
+                            "name": "✅ Fetch a list of public crocodiles"
+                        },
+                        "✅ Fetch a single crocodile by valid ID": {
+                            "name": "✅ Fetch a single crocodile by valid ID",
+                            "path": "::🐊 Crocodiles API Performance Tests::✅ Fetch a single crocodile by valid ID",
+                            "id": "ffcac6f32b16655950ebffec912c588e",
+                            "groups": {},
+                            "checks": {
+                                    "expected Status should be 200 to equal 200": {
+                                        "fails": 333,
+                                        "name": "expected Status should be 200 to equal 200",
+                                        "path": "::🐊 Crocodiles API Performance Tests::✅ Fetch a single crocodile by valid ID::expected Status should be 200 to equal 200",
+                                        "id": "a6b87eb046c2719ebbe6e706c6791db5",
+                                        "passes": 33047
+                                    },
+                                    "expected Response body should match expected to deeply equal { id: 6, name: 'Sang Buaya', …(3) }": {
+                                        "name": "expected Response body should match expected to deeply equal { id: 6, name: 'Sang Buaya', …(3) }",
+                                        "path": "::🐊 Crocodiles API Performance Tests::✅ Fetch a single crocodile by valid ID::expected Response body should match expected to deeply equal { id: 6, name: 'Sang Buaya', …(3) }",
+                                        "id": "d5909ea5c7785cbb72c7ac9f35665e29",
+                                        "passes": 0,
+                                        "fails": 33047
+                                    }
+                                }
+                        },
+                        "❌ Fetch an invalid crocodile ID (should return 404)": {
+                            "id": "43b51bbf5fb14b8c6e3f7205e5705839",
+                            "groups": {},
+                            "checks": {
+                                    "expected Status should be 404 to equal 404": {
+                                        "name": "expected Status should be 404 to equal 404",
+                                        "path": "::🐊 Crocodiles API Performance Tests::❌ Fetch an invalid crocodile ID (should return 404)::expected Status should be 404 to equal 404",
+                                        "id": "17e1e69b7a00a00e17873ecbc4a36770",
+                                        "passes": 33042,
+                                        "fails": 338
+                                    },
+                                    "expected Error message should be 'Not found.' to equal 'Not found.'": {
+                                        "name": "expected Error message should be 'Not found.' to equal 'Not found.'",
+                                        "path": "::🐊 Crocodiles API Performance Tests::❌ Fetch an invalid crocodile ID (should return 404)::expected Error message should be 'Not found.' to equal 'Not found.'",
+                                        "id": "b7cc92f3de61730414e02cb3b80d8ad7",
+                                        "passes": 33042,
+                                        "fails": 0
+                                    }
+                                },
+                            "name": "❌ Fetch an invalid crocodile ID (should return 404)",
+                            "path": "::🐊 Crocodiles API Performance Tests::❌ Fetch an invalid crocodile ID (should return 404)"
+                        }
+                    }
+            }
+        },
+        "checks": {},
+        "name": "",
+        "path": ""
+    },
+    "metrics": {
+        "http_req_connecting": {
+            "avg": 1.0981338704201151,
+            "min": 0,
+            "med": 0,
+            "max": 1100.9261,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "dropped_iterations": {
+            "count": 29393,
+            "rate": 48.93893780339672
+        },
+        "http_req_failed": {
+            "passes": 34043,
+            "fails": 166235,
+            "thresholds": {
+                "rate<0.01": true
+            },
+            "value": 0.1699787295659034
+        },
+        "http_req_tls_handshaking": {
+            "avg": 2.940609296078454,
+            "min": 0,
+            "med": 0,
+            "max": 1018.5325,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "data_sent": {
+            "count": 30879415,
+            "rate": 51413.79818631224
+        },
+        "checks": {
+            "passes": 198281,
+            "fails": 34048,
+            "thresholds": {
+                "rate>0.99": true
+            },
+            "value": 0.8534492035002088
+        },
+        "http_req_blocked": {
+            "p(95)": 0,
+            "avg": 4.042462392774047,
+            "min": 0,
+            "med": 0,
+            "max": 1491.5551,
+            "p(90)": 0
+        },
+        "http_req_waiting": {
+            "med": 100.4764,
+            "max": 26909.2666,
+            "p(90)": 223.22632000000033,
+            "p(95)": 1134.269865,
+            "avg": 276.70901952036604,
+            "min": 0
+        },
+        "group_duration": {
+            "avg": 844.5863708755238,
+            "min": 170.1147,
+            "med": 213.2234,
+            "max": 33456.6965,
+            "p(90)": 1858.8673500000032,
+            "p(95)": 3398.3533799999905
+        },
+        "http_req_duration": {
+            "min": 0,
+            "med": 100.5685,
+            "max": 26909.2666,
+            "p(90)": 223.22632000000033,
+            "p(95)": 1134.287045,
+            "avg": 276.80535509241895,
+            "thresholds": {
+                "p(90)<500": false,
+                "p(95)<800": true,
+                "p(99)<1200": true
+            }
+        },
+        "http_req_sending": {
+            "avg": 0.009105043489549502,
+            "min": 0,
+            "med": 0,
+            "max": 4.9982,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "data_received": {
+            "count": 79047761,
+            "rate": 131613.4269750202
+        },
+        "http_req_receiving": {
+            "p(95)": 0.7296,
+            "avg": 0.08723052856529376,
+            "min": 0,
+            "med": 0,
+            "max": 18.5617,
+            "p(90)": 0.4494300000000018
+        },
+        "iteration_duration": {
+            "max": 33456.6965,
+            "p(90)": 3671.7229300000004,
+            "p(95)": 6481.206294999999,
+            "avg": 1689.2042889305092,
+            "min": 540.3313,
+            "med": 621.1377
+        },
+        "http_reqs": {
+            "count": 200278,
+            "rate": 333.46009544410873
+        },
+        "http_req_duration{expected_response:true}": {
+            "avg": 246.80680473546022,
+            "min": 77.673,
+            "med": 98.4078,
+            "max": 26909.2666,
+            "p(90)": 176.93698000000015,
+            "p(95)": 1066.468799999996
+        },
+        "iterations": {
+            "count": 33380,
+            "rate": 55.57723756940028
+        },
+        "vus_max": {
+            "value": 450,
+            "min": 100,
+            "max": 450
+        },
+        "vus": {
+            "value": 32,
+            "min": 28,
+            "max": 450
+        }
+    }
+}
