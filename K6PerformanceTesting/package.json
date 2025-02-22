@@ -1,0 +1,21 @@
+{
+  "name": "k6-performance-testing",
+  "version": "1.0.0",
+  "description": "K6 Performance Testing Boilerplate for Web & API Workflows",
+  "type": "module",  
+  "scripts": {
+    "setup": "chmod +x setup.sh && ./setup.sh",
+    "test:load": "k6 run tests/sauceDemoTest.js --env TEST_TYPE=load --env BASE_URL=https://www.saucedemo.com --env USERNAME=standard_user --env PASSWORD=secret_sauce",
+    "test:stress": "k6 run tests/sauceDemoTest.js --env TEST_TYPE=stress --env BASE_URL=https://www.saucedemo.com --env USERNAME=standard_user --env PASSWORD=secret_sauce",
+    "test:all": "npm run test:load && npm run test:stress",
+    "performance_test": "k6 run tests/api-performance-test.js --summary-export=reports/results.json && npm run generate-report",
+    "generate-report": "node utils/reportGenerator.js"
+  },
+  "dependencies": {
+    "k6": "^0.46.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

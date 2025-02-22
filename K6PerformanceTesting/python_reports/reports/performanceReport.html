@@ -1,0 +1,98 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>K6 Performance Test Report</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f4; }
+                .container { max-width: 1000px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+                h1 { text-align: center; color: #4CAF50; }
+                table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+                th { background: #4CAF50; color: white; }
+                .pass { color: green; }
+                .fail { color: red; }
+                .warn { color: orange; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>📊 K6 Performance Test Report</h1>
+
+                <!-- Load Test Results -->
+                <h2>🚀 Load Test Results</h2>
+                <table>
+                    <tr><th>Metric</th><th>Value (s)</th><th>Status</th></tr>
+                    <tr>
+                        <td>HTTP Request Duration (p90)</td>
+                        <td>0.22s</td>
+                        <td><span style="color: green;">✅ Pass</span></td>
+                    </tr>
+                    <tr>
+                        <td>HTTP Request Duration (p95)</td>
+                        <td>1.13s</td>
+                        <td><span style="color: red;">❌ Fail</span></td>
+                    </tr>
+                    <tr>
+                        <td>HTTP Requests Failed</td>
+                        <td>17.00%</td>
+                        <td><span style="color: green;">✅ Pass</span></td>
+                    </tr>
+                </table>
+
+                <!-- Stress Test Results -->
+                <h2>🔥 Stress Test Results</h2>
+                <table>
+                    <tr><th>Metric</th><th>Value</th><th>Status</th></tr>
+                    <tr>
+                        <td>Max Load Before Failure</td>
+                        <td>450 VUs</td>
+                        <td>📈 Observed</td>
+                    </tr>
+                    <tr>
+                        <td>Failure Threshold Crossed At</td>
+                        <td>1.13s</td>
+                        <td><span style="color: green;">✅ Pass</span></td>
+                    </tr>
+                </table>
+
+                <!-- Soak Test Results -->
+                <h2>🌊 Soak Test Results</h2>
+                <table>
+                    <tr><th>Metric</th><th>Value</th><th>Status</th></tr>
+                    <tr>
+                        <td>Sustained Requests Per Second</td>
+                        <td>333.46</td>
+                        <td>📊 Observed</td>
+                    </tr>
+                    <tr>
+                        <td>Average Response Time</td>
+                        <td>0.28s</td>
+                        <td><span style="color: green;">✅ Pass</span></td>
+                    </tr>
+                    <tr>
+                        <td>Memory Leak Observed</td>
+                        <td>Not Measured</td>
+                        <td>🧐 Requires Monitoring</td>
+                    </tr>
+                </table>
+
+                <!-- Spike Test Results -->
+                <h2>⚡ Spike Test Results</h2>
+                <table>
+                    <tr><th>Metric</th><th>Value</th><th>Status</th></tr>
+                    <tr>
+                        <td>Max Requests Per Second</td>
+                        <td>333.46</td>
+                        <td>📊 Observed</td>
+                    </tr>
+                    <tr>
+                        <td>Response Time (p95)</td>
+                        <td>1.13s</td>
+                        <td><span style="color: green;">✅ Pass</span></td>
+                    </tr>
+                </table>
+            </div>
+        </body>
+        </html>

@@ -1,0 +1,72 @@
+# ================================
+# 📌 Performance Test Configuration
+# ================================
+
+# ✅ Define the types of performance tests to run
+# Options: "load" (simulates expected traffic), "stress" (tests system breaking point)
+testType:
+  - load
+  - stress
+
+# ✅ Base URL of the application under test
+# ✅ Define Base URLs for different environments
+baseURLs:
+  dev: "https://dev.saucedemo.com"
+  staging: "https://staging.saucedemo.com"
+  prod: "https://www.saucedemo.com"
+
+# ✅ User credentials used for authentication during testing
+users:
+  username: "standard_user"
+  password: "secret_sauce"
+
+# ========================
+# ✅ Performance Thresholds
+# ========================
+thresholds:
+  # 📌 Response Time Requirements
+  # - Ensures 90% of requests complete in under 3 seconds
+  # - Ensures 95% of requests complete in under 5 seconds
+  # - Ensures 99% of requests complete in under 10 seconds
+  http_req_duration:
+    - "p(90)<3000"
+    - "p(95)<5000"
+    - "p(99)<10000"
+
+  # 📌 Error Rate Monitoring
+  # - Ensures that failed HTTP requests remain below 1%
+  http_req_failed: ["rate<0.01"]
+
+  # 📌 Functional Checks
+  # - Ensures that at least 99% of key assertions (e.g., login success) pass
+  checks: ["rate>0.99"]
+
+# ==========================
+# ✅ Load Testing Configuration
+# ==========================
+loadTest:
+  stages:
+    - duration: "2m"   # Ramp up to 50 virtual users over 2 minutes
+      target: 50
+    - duration: "15m"  # Maintain 50 users for 15 minutes
+      target: 50
+    - duration: "5m"   # Increase to 100 users over 5 minutes
+      target: 100
+    - duration: "2m"   # Ramp down to 0 users over 2 minutes
+      target: 0
+
+# ==========================
+# ✅ Stress Testing Configuration
+# ==========================
+stressTest:
+  stages:
+    - duration: "5m"   # Ramp up to 100 users in 5 minutes
+      target: 100
+    - duration: "10m"  # Increase to 200 users over 10 minutes
+      target: 200
+    - duration: "5m"   # Increase to 300 users over 5 minutes
+      target: 300
+    - duration: "5m"   # Maintain 300 users for 5 minutes
+      target: 300
+    - duration: "5m"   # Gradually reduce users to 0 over 5 minutes
+      target: 0
